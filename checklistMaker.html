@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fontello/css/fontello.css">
+  <title>Checklist Maker 1.0</title>
+  <script src="skrypty.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  
+</head>
+
+<body onload="load()">
+  <div class="container">
+  <div class="subContainer">
+	<div id="tabBox">
+		<div class="tab activeTab" id="tb0"><p>Karta 1</p><i class="icon-cancel" onclick="removeTab(0)"></i></div>
+		<div id="addTab"><i class="icon-plus"></i></div>
+	</div>
+    <div class="inputBox">
+	  
+	  <input type="textarea" id="inputText" placeholder="Twoje zadanie..."/>
+	  <input type="submit" id="submitButton" value="Dodaj"/>	
+	  
+	</div>
+
+	<div class="buttonBox">
+		<button type="button" id="saveButton" class="toolTipBox">
+			<i class="icon-floppy"></i>
+			<span class="toolTip">Zapisz</span>
+		</button>
+
+		<button type="button" id="loadButton" class="toolTipBox">
+			<i class="icon-upload"></i>
+			<span class="toolTip">Wczytaj</span>
+		</button>
+		
+		<button type="button" id="clearButton" class="toolTipBox">
+			<i class="icon-trash-empty"></i>
+			<span class="toolTip">Wyczyść</span>
+		</button>
+			
+		<div style="clear: both;"></div>
+		
+	</div>
+  </div>
+	<div class="listBox" id="list">
+		
+	  </div>
+	  	  
+	</div>
+	
+  </div>
+</body>
+</html>

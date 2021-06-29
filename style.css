@@ -1,0 +1,347 @@
+body {
+	background-color: #f2f2f2;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin: 0;
+}
+
+.container {
+	margin: auto;
+	min-height: 1200px;
+	position: relative;
+}
+
+.subContainer {
+	width: 100%;
+	height: 120px;
+	background-color: #0088cc;
+	border-bottom: 7px solid #004466;
+	position: fixed;
+	top: 0;
+	box-shadow: 0 3px 8px 0 #808080;
+	z-index: 2;
+}
+
+#tabBox {
+	position: absolute;
+	height: 30px;
+	width: 100%;
+	margin: 0 5px;
+	top: 90px;
+	display: flex;
+}
+
+.tab {
+	height: 17.6px;
+	width: auto;
+	color: whitesmoke;
+	background-color: #004466;
+	font-size: 14px;
+	text-align: center;
+	margin-right: 5px;
+	cursor: pointer;
+	position: relative;
+	padding: 6.2px 20px 6.2px 15px;
+	border-radius: 3px 3px 0 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	opacity: 0.9;
+	transition: opacity 200ms ease-out;
+}
+
+.tab p {
+	margin: 0;
+	padding: 0;
+	text-overflow: ellipsis;
+}
+
+.tab > .icon-cancel:before {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	color: whitesmoke;
+	font-size: 10px;
+}
+
+#addTab {
+	height: 17.6px;
+	width: auto;
+	background-color: #004466;
+	order: 999;
+	cursor: pointer;
+	text-align: center;
+	padding: 6.2px;
+	border-radius: 3px 3px 0 0;
+	opacity: 0.9;
+	transition: opacity 200ms ease-out;
+}
+
+#addTab:active {
+	opacity: 1;
+	color: white;
+}
+
+.activeTab {
+	border-bottom: 7px solid #1ab2ff;
+	color:white;
+}
+
+.activeTab > .icon-cancel:before {
+	color: white;
+	opacity: 1;
+}
+
+.inputBox {
+	width: calc(33vw + 90px);
+	height: 50px;
+	position: absolute;
+	left: calc(calc(66vw - 80px) / 2);
+	right: calc(calc(66vw - 80px) / 2);
+	top: 30px;
+
+}
+
+.listBox {
+	width: 45%;
+	margin: 50px auto 0 auto;
+	clear: both;
+	margin-top: 160px;
+}
+
+#inputText {
+	height: 30px;
+	width: 31vw;
+	margin-right: 10px;
+	padding: 10px 1vw;
+	float: left;
+	border: none;
+	font-size: 15px;
+	border-radius: 3px;
+	font-size: 17px;
+	outline: none;
+	opacity: 0.9;
+	background-color: white;
+	transition: opacity 200ms ease-out;
+}
+
+#inputText:focus {
+	background-color: #ffffff;
+	opacity: 1;
+}
+
+#submitButton {
+	height: 30px;
+	width: 60px;
+	font-size: 18px;
+	background-color: #004466;
+	margin: 0;
+	padding: 10px;
+	float: left;
+	border-radius: 3px;
+	cursor: pointer;
+	box-sizing: content-box;
+	color: whitesmoke;
+	border: none;
+	outline: none;
+	transition: border-bottom 100ms ease-out;
+	position: relative;
+	opacity: 0.9;
+	transition: opacity 200ms ease-out;
+	transition: border-bottom 100ms ease-out;
+}
+
+#submitButton::after {
+	clear: both;
+}
+
+#submitButton:hover {
+	color: white;
+	border-bottom: 4px solid #1ab2ff;
+	outline: none;
+	opacity: 1;
+}
+
+.buttonBox {
+	height: 50px;
+	margin: auto 0;
+	width: auto;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	display: flex;
+	justify-content: end;
+
+}
+
+#saveButton,
+#loadButton,
+#clearButton {
+	height: 30px;
+	background-color: #004466;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 3px;
+	color: whitesmoke;
+	opacity: 0.9;
+	box-sizing: content-box;
+	transition: opacity 200ms ease-out;
+	transition: border-bottom 100ms ease-out;
+	width: 36px;
+	text-align: center;
+}
+
+#saveButton:hover,
+#loadButton:hover,
+#clearButton:hover,
+#submitButton:hover {
+opacity: 1;
+border-bottom: 4px solid #1ab2ff;
+outline: none;
+color: white;
+}
+
+#saveButton:focus,
+#loadButton:focus,
+#clearButton:focus,
+#submitButton:focus {
+	outline: none;
+}
+
+#saveButton {
+	font-size: 26px;
+	margin-right: 10px;
+}
+
+#clearButton {
+	font-size: 26px;
+
+}
+
+#loadButton {
+	font-size: 22px;
+	margin-right: 10px;
+}
+#loadButton i::before {
+	transform:rotateY(180deg);
+}
+
+.toolTipBox {
+	position: relative;
+	display: inline-block;
+}
+
+.toolTip {
+  visibility: hidden;
+  width: 56px;
+  background-color: #004466;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 3;
+  top: 124%;
+  margin: 0 auto;
+  font-size: 11.5px;
+  right: 0px; 
+}
+
+.toolTipBox:hover .toolTip {
+	visibility: visible;
+}
+
+.listElement {
+	background-color: white;
+	width: calc(100% - 40px);
+	min-height: 100px;
+	height: auto;
+	padding: 20px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	clear: both;
+	overflow: hidden; 
+	scroll-behavior: smooth;
+	position: relative;
+	z-index: 1;
+	opacity: 0.7;
+	transition: opacity 250ms ease-in-out;
+}
+
+.listElement:hover {
+	opacity: 1;
+}
+
+.icon-check::before,
+.icon-check-empty::before {
+	position: absolute;
+	top: 52px;
+	font-size: 36px;
+	display: block;
+	cursor: pointer;
+}
+
+.icon-check-empty::before {
+	left: 20px;
+}
+
+.icon-check::before {
+	left: 22.5px;
+}
+
+.deleteButton
+{
+	width: 18px;
+	height: 18px;
+	float: right;
+	background-color: crimson;
+	cursor: pointer;
+	border: 1px solid #cccccc;
+}
+
+.listElement > p
+{
+	margin: 0 58px 0 58px;
+	float: left;
+	font-size: 20px;
+	width: 80%;
+	word-wrap: break-word;
+	overflow: auto;
+	display: block;
+}
+
+@media only screen and (max-width: 1000px) {
+	.subContainer {
+		height: 150px;
+		display: flex;
+		flex-direction: column;
+		/* justify-content: center; */
+		align-items: center;
+		padding-top: 20px;
+	}
+
+	.buttonBox {
+		position: static;
+		margin-top: 10px;
+	}
+
+	.inputBox {
+		position: static;
+		margin-bottom: 10px;
+		width: calc(72vw + 90px);
+		margin: 0;
+	}
+
+	#inputText {
+		width: 70vw;
+	}
+
+	#tabBox {
+		top: 140px;
+	}
+
+	.listBox {
+		width: calc(72vw + 90px);
+		margin-top: 210px;
+	}
+}
